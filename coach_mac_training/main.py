@@ -15,11 +15,6 @@ from models import (
 from handlers import init_logger
 from html import project_home_page, unimplemented_page, unimplemented_dev_page
 
-
-
-
-
-
 from html import (
     project_base_page,
     project_home_page,
