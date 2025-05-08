@@ -1,6 +1,4 @@
-from calendar import week
-import os
-from tkinter import W
+import json
 
 from phtml import *
 from my_base_html_lib import MyBaseDocument, NavigationContent, SidebarContent, BodyContent, FooterContent
@@ -58,341 +56,19 @@ from .env import (
     TEXT_COLOR_TWO,
 )
 
-workout_info = [
-    {
-        "date": "Mon Jun 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jun 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jun 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jun 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jun 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jun 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jun 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jun 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jun 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jun 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jun 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jun 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jun 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jun 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jun 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jun 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jun 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jun 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jun 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jun 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jun 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jun 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jul 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jul 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jul 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jul 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jul 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jul 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jul 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jul 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jul 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jul 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jul 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jul 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jul 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jul 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jul 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jul 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jul 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jul 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jul 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jul 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jul 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jul 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jul 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jul 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Jul 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Jul 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Jul 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Jul 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Jul 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Jul 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Jul 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Aug 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Aug 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Aug 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Aug 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Tue Aug 2",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Wed Aug 3",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Thu Aug 4",
-        "focus": "Workout / Speed",
-        "detail": ""
-    },
-    {
-        "date": "Fri Aug 5",
-        "focus": "Run / Drills",
-        "detail": ""
-    },
-    {
-        "date": "Sat Aug 6",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Sun Aug 0",
-        "focus": "Off",
-        "detail": ""
-    },
-    {
-        "date": "Mon Aug 1",
-        "focus": "Run / Drills",
-        "detail": ""
-    }
-]
+with open('../etc/workout_plan.json', 'r') as jf:
+    workout_plan = json.load(jf)
 
 WORKOUT_PAGE_STYLES = [
     # StyleTag(name='.page-content', internal=f"""
     # """,)
     StyleTag(name='.week-tile', internal=f"""
-    background-color: {SECONDARY_SELECTION_COLOR};
+    background-color: {CONTENT_COLOR_ONE};
     padding: 10px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid black;
     """),
-    # StyleTag(name='.day-tile', internal=f"""
-    # """),
     StyleTag(name='.day-date', internal=f"""
         display: inline-block;
 
@@ -409,64 +85,34 @@ WORKOUT_PAGE_STYLES = [
         padding: 2px;
         margin: 2px;
     """),
-    
-    # StyleTag(name='.home-page-content', internal=f"""
-    #     color: {TEXT_COLOR_ONE};
-    #     margin: 10px;
-    #     padding: 0;
-    # """),
-    # StyleTag(name='.home-page-content h1', internal=f"""
-    #     margin: 0;
-    #     padding: 20px 40px;
-    # """),
-    # StyleTag(name='.page-group-div', internal=f"""
-    #     color: {TEXT_COLOR_ONE};
-    #     margin: 0;
-    #     padding: 0;
-    #     display: inline;
-    # """),
+    StyleTag(name='.week-table', internal=f"""
+        padding: 2px;
+        margin: 2px;
+    """),
 
-    # StyleTag(name='.page-div', internal=f"""
-    #     background-color: {PRIMARY_SELECTION_COLOR};
-    #     margin: 20px;
-    #     padding: 0;
-    #     border: 3px solid black;
-    #     border-radius: 15px;
-    #     -moz-border-radius: 15px;
-    #     height: 100px;
-    #     width: 400px;
-    #     display: inline-block;
-    #     vertical-align: top;
-    # """),
-
-    # StyleTag(name='.page-link', internal=f"""
-    #     color: {TEXT_COLOR_ONE};
-    #     text-decoration: none;
-    # """),
-
-
-    # StyleTag(name='.page-header', internal=f"""
-    #     margin: 10px;
-    #     padding: 0;
-    #     text-align: center;
-    # """),
-    # StyleTag(name='.page-paragraph', internal=f"""
-    #     margin: 10px;
-    #     padding: 0;
-    #     text-align: center;
-    # """),
-
-
-    # StyleTag(name='.page-link h2', internal=f"""
-    #     margin: 15px;
-    #     padding: 0;
-    # """),
-    # StyleTag(name='.page-link p', internal=f"""
-    #     margin: 0;
-    #     padding: 0;
-    # """),
+    StyleTag(name='.table-data', internal=f"""
+        margin: 2px;
+        // border: 2px solid black;
+    """),
+    StyleTag(name='.table-data-date', internal=f"""
+        padding: 2px 10px;
+    """),
+    StyleTag(name='.table-data-focus', internal=f"""
+        padding: 2px 10px;
+    """),
+    StyleTag(name='.table-data-detail', internal=f"""
+        padding: 2px 50px;
+    """),
 ]
 
+def create_table_object(columns):
+    week_table = Table().add_class('week-table')
+    header_row = TableRow().add_class('odd-row')
+    for column_name, column_options in columns.items():
+        header_item = TableHeader(internal=column_name)
+        header_row.add_element(header_item)
+    week_table.add_element(header_row)
+    return week_table
 
 
 async def workouts_page(onload_function=None):
@@ -474,33 +120,57 @@ async def workouts_page(onload_function=None):
 
     page_content = Div().add_class('page-content')
 
-    week_tile = Div().add_class('week-tile')
-    week_counter = 1
-    for day in workout_info:
-        day_tile = Div().add_class('day-tile')
-        if day['date'].startswith('Mon'):
-            page_content.add_element(week_tile)
-            week_tile = Div().add_class('week-tile')
-            week_tile.add_element(Header(level=3, internal=f"Week {week_counter}").add_class('week-header'))
-            week_counter += 1
-        day_tile.add_element(Div(day['date']).add_class('day-date'))
-        day_tile.add_element(Div(day['focus']).add_class('day-focus'))
-        day_tile.add_element(Div(day['detail']).add_class('day-detail'))
-        week_tile.add_element(day_tile)
+    workout_expectations = Div().add_class('workout-expectations')
+    workout_expectations.add_element(Header(level=2, internal='Summer Focus'))
+    workout_expectations.add_element(Paragraph(internal="""
+We are here to take the foundations of the season and improve so we can try to make state this next season. We want to focus on the following:
+    """))
 
-        # Switch to a table
-    
+    workout_expectations.add_element(Paragraph(internal='BUY IN - We want to you buy all the way in. We are here for you to improve but it has to start with you and a hunger.'))
+    workout_expectations.add_element(Paragraph(internal='HONE YOUR BODY - We want to improve your speed, strength, and power endurance.'))
+    workout_expectations.add_element(Paragraph(internal='BUILD A TEAM - We want to have team comradery and foster team spirit.'))
+    workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
+    workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
+    workout_expectations.add_element(Paragraph(internal="""
+Every practice will start with team warmups. This is to get your body ready for the day. The workouts will vary for different athletes. At the end of the workout all athletes will come back together for team stretching. This is important for building a cohesive team.
+"""))
+    page_content.add_element(workout_expectations)
+
+    week_table_columns = {
+        'Date': {},
+        'Focus': {},
+        'Detail': {},
+    }
 
 
-
+    for week_index, week in enumerate(workout_plan):
+        week_tile = Div().add_class('week-tile')
+        week_tile.add_element(Header(level=3, internal=week['tile_header']).add_class('week-header'))
+        if week.get('tile_info_1'):
+            week_tile.add_element(Paragraph(internal=week['tile_info_1']).add_class('week-info-1'))
+        week_table = create_table_object(week_table_columns)
+        for day_index, day in enumerate(week['day_data']):
+            if day_index % 2 == 1:
+                data_row = TableRow().add_class('odd-row')
+            if day_index % 2 == 0:
+                data_row = TableRow().add_class('even-row')
+            data_data = TableData(internal=day['date']).add_class('table-data').add_class('table-data-date')
+            data_row.add_element(data_data)
+            data_data = TableData(internal=day['plan']).add_class('table-data').add_class('table-data-focus')
+            data_row.add_element(data_data)
+            data_data = TableData(internal=day['detail']).add_class('table-data').add_class('table-data-detail')
+            data_row.add_element(data_data)
+            week_table.add_element(data_row)
+        week_tile.add_element(week_table)
+        if week.get('tile_info_2'):
+            week_tile.add_element(Paragraph(internal=week['tile_info_2']).add_class('week-info-2'))
+        page_content.add_element(week_tile)
 
     body_content = BodyContent(body_content=[page_content])
 
-    # # Styles
-    # for style in PAGE_STYLES:
-    #     body_content.add_body_styles(style)
-    # for style in FILTER_STYLES:
-    #     body_content.add_body_styles(style)
+    # Styles
+    for style in TABLE_STYLES:
+        body_content.add_body_styles(style)
     for style in WORKOUT_PAGE_STYLES:
         body_content.add_body_styles(style)
 

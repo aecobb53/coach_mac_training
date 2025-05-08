@@ -481,6 +481,23 @@ average number of sessions is two to three per week.
 
     return base_doc.return_document
 
+async def broken_page():
+    base_doc = await project_base_page()
+
+    # Body
+    page_content = Div().add_class('home-page-content')
+    page_content.add_element(Header(level=1, internal="Page broken, check back later"))
+
+
+    body_content = BodyContent(
+        body_content=[page_content],
+        body_styles=PAGE_STYLES,)
+
+    base_doc.body_content = body_content
+
+    return base_doc.return_document
+
+
 async def project_about():
     base_doc = await project_base_page()
 

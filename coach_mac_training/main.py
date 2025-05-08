@@ -2,6 +2,7 @@ import os
 import json
 
 from datetime import datetime
+from tkinter import E
 from fastapi import FastAPI, Query, Request, HTTPException, Body
 from fastapi.responses import HTMLResponse, ORJSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,6 +12,7 @@ from models import (
     RestHeaders,
     ContextSingleton)
 # from handlers import DatabaseHandler, init_logger
+from handlers import init_logger
 from html import project_home_page, unimplemented_page, unimplemented_dev_page
 
 
@@ -23,6 +25,7 @@ from html import (
     project_home_page,
     # project_about,
     unimplemented_page,
+    broken_page,
     # filter_results_html_page,
     # filter_athletes_html_page, find_athletes_html_page,
     # filter_teams_html_page, find_team_html_page,
@@ -107,21 +110,44 @@ async def startup_event():
     # db.create_tables()
     context = ContextSingleton()
     # context.database = db
-    # context.logger = init_logger()
+    context.logger = init_logger()
 
 
 # Root
 @app.get('/', status_code=200)
 async def root(request: Request):
-    project_page = await project_home_page()
-    return HTMLResponse(content=project_page)
+    context = ContextSingleton()
+    try:
+        page = await project_home_page()
+        return HTMLResponse(content=page)
+    except Exception as e:
+        context.logger.warning(f"Error generating project page: {e}")
+        page = await broken_page()
+        return HTMLResponse(content=page, status_code=500)
 
 # Workouts
 @app.get('/workouts', status_code=200)
-async def root(request: Request):
-    project_page = await workouts_page()
-    return HTMLResponse(content=project_page)
+async def workouts(request: Request):
+    context = ContextSingleton()
+    try:
+        page = await workouts_page()
+        return HTMLResponse(content=page)
+    except Exception as e:
+        context.logger.warning(f"Error generating project page: {e}")
+        page = await broken_page()
+        return HTMLResponse(content=page, status_code=500)
 
+# Workouts
+@app.get('/about', status_code=200)
+async def about(request: Request):
+    context = ContextSingleton()
+    try:
+        page = await unimplemented_page()
+        return HTMLResponse(content=page)
+    except Exception as e:
+        context.logger.warning(f"Error generating project page: {e}")
+        page = await broken_page()
+        return HTMLResponse(content=page, status_code=500)
 
 
 # # Root
