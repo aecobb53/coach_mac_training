@@ -22,12 +22,17 @@ remote_hash=$(git rev-parse origin/$(git branch --show-current))
 
 # Compare commit hashes
 if [ "$local_hash" != "$remote_hash" ]; then
-  echo "Remote changes detected. Pulling and redeploying..." >> $LOGFILE
-  git pull origin > /dev/null 2>&1
-  # Add your redeployment commands here
-  echo "Redeployment complete." >> $LOGFILE
+    echo "Remote changes detected. Pulling and redeploying..." >> $LOGFILE
+    git pull origin > /dev/null 2>&1
+    ./update.sh
+    echo "Updated" >> $LOGFILE
+    ./restart.sh
+    echo "Restarted" >> $LOGFILE
+    # Add your redeployment commands here
+    echo "Redeployment complete." >> $LOGFILE
+    date >> $LOGFILE
 else
-  echo "No remote changes detected." >> $LOGFILE
+    echo "No remote changes detected." >> $LOGFILE
 fi
 
 
