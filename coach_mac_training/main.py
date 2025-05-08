@@ -27,6 +27,7 @@ from html import (
     # filter_athletes_html_page, find_athletes_html_page,
     # filter_teams_html_page, find_team_html_page,
     # filter_records_html_page,
+    workouts_page,
 )
 
 
@@ -115,6 +116,11 @@ async def root(request: Request):
     project_page = await project_home_page()
     return HTMLResponse(content=project_page)
 
+# Workouts
+@app.get('/workouts', status_code=200)
+async def root(request: Request):
+    project_page = await workouts_page()
+    return HTMLResponse(content=project_page)
 
 
 

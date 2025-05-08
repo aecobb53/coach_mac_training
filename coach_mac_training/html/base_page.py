@@ -408,6 +408,7 @@ async def project_base_page(onload_function=None):
         background_color=NAVIGATION_BACKGROUND_COLOR,
         text_color=TEXT_COLOR_TWO,
         )
+    navigation_content.add_navigation_link('Workouts', '/workouts')
 
     if onload_function:
         doc = MyBaseDocument(
@@ -429,78 +430,46 @@ async def project_home_page():
     # Body
     page_content = Div().add_class('home-page-content')
 
-    page_content.add_element(Header(level=1, internal="Summer Season Plan"))
-    page_content.add_element(Paragraph(internal="This is the summer season plan for the 2024 season. I will update with A LOT more info with time."))
+    page_content.add_element(Header(level=1, internal="Summer 2025 Track Training Plan"))
+    page_content.add_element(Paragraph(internal="""
+Coach Mac Training is a private coaching service dedicated to providing professional
+coaching and development to young athletes. I also provide training, rehabilitation, and
+athletic preparation for competition. I offer athletes who want to improve their fitness with
+mentorship, performance enhancing techniques and guidance necessary to achieve their
+desired results.
+Athletes utilizing this service will learn how to properly train for their specific athletic goals
+using techniques and workout plans designed for each individual athlete. The ultimate
+objective is to motivate each athlete to develop an improved, healthy lifestyle and training
+schedules that will lead them to a successful athletic career.
+What I offer is to prepare the athletes for their careers in athletics as well as to reach their
+goals in being the best athlete they can be for their respective teams and sport.
+    """))
 
-    # for grouping, pages in HOME_PAGE_LINK_CONTENT.items():
-    #     grouping_div = Div(Header(level=1, internal=grouping)).add_class('page-group-div')
+    page_content.add_element(Header(level=1, internal="Mission"))
+    page_content.add_element(Paragraph(internal="""
+To encourage, teach, and prepare young athletes to maximize their athletic potential
+working to develop, improve, and introduce mental toughness and life skills to ultimately
+live productive and healthy lives.
+    """))
 
-    #     for page, details in pages.items():
-    #         content = [
-    #             Div(internal=Header(level=2, internal=page)).add_class('page-header'),
-    #             Div(internal=Paragraph(internal=details['description'])).add_class('page-paragraph'),
-    #         ]
-    #         page_link = Link(internal=content, href=f"/html/{details['endpoint']}").add_class('page-link').add_class('page-div')
-    #         grouping_div.add_element(page_link)
-    #     page_content.add_element(grouping_div)
+    page_content.add_element(Header(level=1, internal="Mission"))
+    page_content.add_element(Paragraph(internal="""
+We strive to connect and build athletes up through dynamic coaching and training. We are
+always improving new techniques and training practice with the ultimate goal of helping
+athletes be the best version of themselves in their athletic endeavors. We are driven by our
+passion in coaching and our strive to make a difference.
+    """))
 
-    # # body_styles = [
-    # #     StyleTag(name='.home-page-content', internal=f"""
-    # #         color: {TEXT_COLOR_ONE};
-    # #         margin: 10px;
-    # #         padding: 0;
-    # #     """),
-    # #     StyleTag(name='.home-page-content h1', internal=f"""
-    # #         margin: 0;
-    # #         padding: 20px 40px;
-    # #     """),
-    # #     StyleTag(name='.page-group-div', internal=f"""
-    # #         color: {TEXT_COLOR_ONE};
-    # #         margin: 0;
-    # #         padding: 0;
-    # #         display: inline;
-    # #     """),
-
-    # #     StyleTag(name='.page-div', internal=f"""
-    # #         background-color: {PRIMARY_SELECTION_COLOR};
-    # #         margin: 20px;
-    # #         padding: 0;
-    # #         border: 3px solid black;
-    # #         border-radius: 15px;
-    # #         -moz-border-radius: 15px;
-    # #         height: 100px;
-    # #         width: 400px;
-    # #         display: inline-block;
-    # #         vertical-align: top;
-    # #     """),
-
-    # #     StyleTag(name='.page-link', internal=f"""
-    # #         color: {TEXT_COLOR_ONE};
-    # #         text-decoration: none;
-    # #     """),
-
-
-    # #     StyleTag(name='.page-header', internal=f"""
-    # #         margin: 10px;
-    # #         padding: 0;
-    # #         text-align: center;
-    # #     """),
-    # #     StyleTag(name='.page-paragraph', internal=f"""
-    # #         margin: 10px;
-    # #         padding: 0;
-    # #         text-align: center;
-    # #     """),
-
-
-    # #     StyleTag(name='.page-link h2', internal=f"""
-    # #         margin: 15px;
-    # #         padding: 0;
-    # #     """),
-    # #     StyleTag(name='.page-link p', internal=f"""
-    # #         margin: 0;
-    # #         padding: 0;
-    # #     """),
-    # # ]
+    page_content.add_element(Header(level=1, internal="Current Offerings"))
+    page_content.add_element(Paragraph(internal="""
+Private and specialized training for athletes in untimed sessions. The sessions are specific
+for each athlete. The time can range from one to two hours or more depending on the
+athlete’s need.
+Current pricing is $100 per session. I will offer weekly and monthly packages for athletes
+and their families.
+The session frequency will depend on the athlete and their training preferences. The
+average number of sessions is two to three per week.
+    """))
 
     body_content = BodyContent(
         body_content=[page_content],
