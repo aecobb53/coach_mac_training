@@ -6,6 +6,8 @@ echo '' >> $LOGFILE
 echo '' >> $LOGFILE
 date >> $LOGFILE
 
+cd git/coach_mac_training
+
 # Get current commit hash
 local_hash=$(git rev-parse HEAD)
 
