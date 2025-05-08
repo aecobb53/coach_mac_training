@@ -1,13 +1,11 @@
-git fetch origin
-# git diff origin/main --name-only --exit-code
-# git diff origin/main
-
-NEEDS_UPDATE=$(git diff origin/main --name-only --exit-code)
-LOGFILE="redeploy_log.log"
-
 echo '' >> $LOGFILE
 date >> $LOGFILE
 echo $NEEDS_UPDATE >> $LOGFILE
+
+git fetch origin
+
+NEEDS_UPDATE=$(git diff origin/main --name-only --exit-code)
+LOGFILE="redeploy_log_coach_mac_training.log"
 
 if [[ $NEEDS_UPDATE ]]; then
     echo "There are changes in the main branch. Redeploying..." >> $LOGFILE

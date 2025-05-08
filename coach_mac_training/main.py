@@ -31,6 +31,7 @@ from html import (
     # filter_teams_html_page, find_team_html_page,
     # filter_records_html_page,
     workouts_page,
+    info_page,
 )
 
 
@@ -149,31 +150,21 @@ async def about(request: Request):
         page = await broken_page()
         return HTMLResponse(content=page, status_code=500)
 
-
-# # Root
-# @app.get('/ht', status_code=200)
-# async def root(request: Request):
-#     """HTML PAGE TESTING"""
-#     project_page = await filter_athletes_html_page()
-#     return HTMLResponse(content=project_page)
-
-
-
-
-
-
-# # Root
-# @app.get('/', status_code=200)
-# @app.get('/home', status_code=200)
-# @app.get('/html/home', status_code=200)
-# @app.get('/html/home', status_code=200)
-# async def root(request: Request):
-#     header_details = RestHeaders(request=request)
-#     if header_details.response_type == ResponseTypes.HTML:
-#         project_page = await project_home_page()
-#         return HTMLResponse(content=project_page)
-#     elif header_details.response_type == ResponseTypes.JSON:
-#         return {'Hello': 'WORLD!'}
+# Info
+@app.get('/info', status_code=200)
+@app.get('/service-info', status_code=200)
+async def info(request: Request):
+    context = ContextSingleton()
+    try:
+        info_dict = {
+            'version': app_info['version']
+        }
+        page = await info_page(context, info_dict)
+        return HTMLResponse(content=page)
+    except Exception as e:
+        context.logger.warning(f"Error generating project page: {e}")
+        page = await broken_page()
+        return HTMLResponse(content=page, status_code=500)
 
 # Favicon
 @app.get('/static/favicon.ico', include_in_schema=False)
@@ -186,106 +177,3 @@ async def favicon():
 @app.get('/robots.txt', include_in_schema=False)
 async def favicon():
     return FileResponse(ROBOTS_PATH)
-
-# # About
-# @app.get('/about', status_code=200)
-# async def about(request: Request):
-#     about_page_content = await project_about()
-#     return HTMLResponse(content=about_page_content)
-
-# # Service Info
-# @app.get('/service-info', status_code=200)
-# async def service_info():
-#     context = ContextSingleton()
-#     print(f"context.logger: {context.logger}")
-#     print(f"context.database: {context.database}")
-#     print(f"context.config: {context.config}")
-#     print(f"context.init_time: {context.init_time}")
-#     print(f"CONTEXT: {context}")
-#     output = {
-#         'Status': 'OK',
-#         'Dependencies': {},
-#     }
-#     if context.database:
-#         output['Dependencies']['Database'] = 'OK'
-#     else:
-#         output['Dependencies']['Database'] = 'Down'
-#         output['status'] = 'Degraded'
-
-#     uptime = datetime.now() - context.init_time
-#     output['uptime'] = str(uptime)
-#     return output
-
-
-
-# # @app.get('/test', status_code=200)
-# # async def root(request: Request):
-# #     context = ContextSingleton()
-# #     context.logger.info(f'Request: {request}')
-# #     context.logger.info(f'Request Headers: {request.headers}')
-# #     header_details = RestHeaders(request=request)
-# #     context.logger.info(f'Header Details: {header_details}')
-# #     response_type = header_details.response_type
-# #     context.logger.info(f'Response Type: {response_type}')
-
-# #     a = str(request.headers)[8:-1].replace('"', '\\"').replace("'", '"')
-# #     json_parsed_header = json.loads(a)
-
-# #     page_content = Div().add_style({'display': 'block', 'color': '#949ba4'})
-
-
-# #     page_content.add_element(
-# #         Header(level=1, internal='Request Header:')
-# #     )
-# #     header_json_element = Paragraph()
-# #     a = json.dumps(json_parsed_header, indent=4)
-# #     for i in a.split('\n'):
-# #         header_json_element.add_element(Paragraph(internal=i))
-# #     page_content.add_element(header_json_element)
-
-
-# #     page_content.add_element(
-# #         Header(level=1, internal='Rest Object:')
-# #     )
-# #     page_content.add_element(Paragraph(internal=f"host: {header_details.host}"))
-# #     page_content.add_element(Paragraph(internal=f"connection: {header_details.connection}"))
-# #     page_content.add_element(Paragraph(internal=f"accept: {header_details.accept}"))
-# #     page_content.add_element(Paragraph(internal=f"accept_encoding: {header_details.accept_encoding}"))
-
-
-# #     page_content.add_element(
-# #         Header(level=1, internal='Rest Object:')
-# #     )
-# #     page_content.add_element(Paragraph(internal=f"Response Type: {header_details.response_type}"))
-
-
-# #     base_doc = await project_base_page()
-# #     base_doc.body_content.body_content.append(page_content)
-# #     return HTMLResponse(content=base_doc.return_document)
-
-
-
-# # @app.get('/service-info', status_code=200)
-# # @app.get('/html/service-info', status_code=200)
-# # async def service_info(request: Request):
-# #     service_info_page = await unimplemented_dev_page()
-# #     return HTMLResponse(content=service_info_page)
-# #     # logger.debug('GET on /service-info')
-# #     file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'info.json')
-# #     header_details = RestHeaders(request=request)
-# #     with open(file_path, 'r') as f:
-# #         service_info = json.load(f)
-# #     if header_details.response_type == ResponseTypes.HTML:
-# #         navigation_content = NavigationContent(webpage_name="Game Process Calculator")
-# #         body_content = BodyContent(body_content=[service_info])
-# #         footer_content = FooterContent(
-# #             footer_content=[Header(level=3, internal='Game Process Calculator').add_style(
-# #                 Style(style_details={'margin': '0', 'padding': '0'}))],)
-# #         new_formated_doc = MyBaseDocument(
-# #             navigation_content=navigation_content,
-# #             body_content=body_content,
-# #             footer_content=footer_content,
-# #         )
-# #         return HTMLResponse(content=new_formated_doc.return_document, status_code=200)
-# #     elif header_details.response_type == ResponseTypes.JSON:
-# #         return service_info
