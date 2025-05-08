@@ -116,6 +116,7 @@ async def startup_event():
 
 # Root
 @app.get('/', status_code=200)
+@app.get('/home', status_code=200)
 async def root(request: Request):
     context = ContextSingleton()
     try:
