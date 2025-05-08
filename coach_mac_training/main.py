@@ -35,30 +35,6 @@ from html import (
 )
 
 
-
-
-
-
-
-
-# from routs import (
-#     result_router,
-#     athlete_router,
-#     team_router,
-#     record_router,
-#     # result_html_router,
-#     # athlete_html_router,
-#     # team_html_router,
-#     # record_html_router,
-#     unimplemented_html_router,
-#     # dev_html_router,
-#     workout_router,
-#     # workout_html_router,
-#     # group_html_router,
-#     html_routs_main_router,
-#     meetday_router,
-# )
-
 # Can delete after done testing rest calls from different sources
 from phtml import *
 from my_base_html_lib import MyBaseDocument, NavigationContent, SidebarContent, BodyContent, FooterContent
@@ -70,10 +46,6 @@ with open(os.path.join(os.path.dirname(os.getcwd()), 'info.json'), 'r') as jf:
     app_info = json.load(jf)
 FAVICON_PATH = 'favicon.ico'
 ROBOTS_PATH = 'robots.txt'
-
-
-
-
 
 
 app = FastAPI(
