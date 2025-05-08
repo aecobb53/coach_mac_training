@@ -3,8 +3,6 @@
 LOGFILE_HOME=$(pwd)
 LOGFILE="${LOGFILE_HOME}/redeploy_log_coach_mac_training.log"
 
-echo $LOGFILE
-
 echo '' >> $LOGFILE
 echo '' >> $LOGFILE
 date >> $LOGFILE
