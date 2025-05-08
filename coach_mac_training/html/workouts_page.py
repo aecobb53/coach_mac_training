@@ -17,16 +17,6 @@ from .base_page import (
     TABLE_STYLES,
     )
 
-# from .env import (
-#     SEASON_YEAR,
-#     BACKGROUND_COLOR,
-#     SECONDARY_COLOR,
-#     ACCENT_COLOR,
-#     TEXT_COLOR_ONE,
-#     TEXT_COLOR_TWO,
-#     ROW_BACKGROUND_COLOR_1,
-#     ROW_BACKGROUND_COLOR_2,
-# )
 from .env import (
     SEASON_YEAR,
 #     COLOR_ONE,
