@@ -6,6 +6,8 @@ NEEDS_UPDATE=$(git diff origin/main --name-only --exit-code)
 
 if [[ $NEEDS_UPDATE ]]; then
     echo "There are changes in the main branch. Redeploying..."
+    ./update.sh
+    ./restart.sh
     # git pull origin main
     # Add your redeploy command here, e.g.,:
     # ./deploy.sh
