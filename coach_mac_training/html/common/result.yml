@@ -1,0 +1,378 @@
+filter:
+    Event:
+        event:
+            variable: event
+            display: Event(s)
+            description: Filter by event.
+            datatype: string
+            default_value: null
+        gender:
+            variable: gender
+            display: "Boys/Girls"
+            description: Filter by gender.
+            datatype: string
+            default_value: null
+            no_text_field: true
+            options:
+                - "All"
+                - "Boys"
+                - "Girls"
+    Heat:
+        heat1:
+            variable: heat
+            display: Heat
+            description: Filter by heat.
+            datatype: string
+            default_value: null
+            size: 5
+            # required: true
+            options:
+                - Is exactly
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+        heat2:
+            variable: heat
+            display: Heat
+            description: Filter by heat.
+            datatype: string
+            default_value: null
+            size: 5
+            options:
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+    Place:
+        place1:
+            variable: place
+            display: Place
+            description: Filter by place.
+            datatype: string
+            default_value: null
+            size: 5
+            options:
+                - Is exactly
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+        place2:
+            variable: place
+            display: Place
+            description: Filter by place.
+            datatype: string
+            default_value: null
+            size: 5
+            options:
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+    Wind:
+        wind1:
+            variable: wind
+            display: Wind
+            description: Filter by wind.
+            datatype: string
+            default_value: null
+            size: 5
+            options:
+                - Is exactly
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+        wind2:
+            variable: wind
+            display: Wind
+            description: Filter by wind.
+            datatype: string
+            default_value: null
+            size: 5
+            options:
+                - Less than or equal to
+                - Greater than or equal to
+                - Less than
+                - Greater than
+                - Is not
+    Team:
+        team:
+            variable: team
+            display: Team(s)
+            description: Filter by team.
+            datatype: string
+            default_value: Fairview
+        first_name:
+            variable: first_name
+            display: First Name(s)
+            description: Filter by athlete first name.
+            datatype: string
+            default_value: null
+        last_name:
+            variable: last_name
+            display: Last Name(s)
+            description: Filter by athlete last name.
+            datatype: string
+            default_value: null
+    Meet:
+        meet:
+            variable: meet
+            display: Meet(s)
+            description: Filter by meet.
+            datatype: string
+            default_value: null
+        meet_date1:
+            variable: meet_date
+            display: Meet Date
+            description: Filter by date of meet.
+            datatype: date
+            default_value: 2024-01-01
+            options:
+                - After
+                - Before
+                - Is on
+        meet_date2:
+            variable: meet_date
+            display: Meet Date
+            description: Filter by date of meet.
+            datatype: date
+            default_value: null
+            options:
+                - Before
+                - After
+arrange:
+    Results:
+        limit:
+            variable: limit
+            display: Page Limit
+            description: Records per page.
+            datatype: str
+            default_value: null
+            no_text_field: true
+            options:
+                - '25'
+                - '50'
+                - '100'
+                - '1000'
+        # page_select:
+        #     variable: page_select
+        #     display: Page
+        #     description: Which page of results.
+        #     datatype: str
+        #     default_value: null
+    Sort:
+        sort1:
+            variable: sort
+            display: Sort Column 1
+            description: What to sort by first.
+            datatype: str
+            default_value: Event
+            no_text_field: true
+            options:
+                - Event
+                - Place
+                - Athlete
+                - Team
+                - Result
+                - Wind
+                - Heat
+                - Boys/Womens
+                - Meet
+                - Date
+        sort2:
+            variable: sort
+            display: Sort Column 2
+            description: What to sort by first.
+            datatype: str
+            default_value: Place
+            no_text_field: true
+            options:
+                - Meet
+                - Place
+                - Event
+                - Athlete
+                - Team
+                - Result
+                - Wind
+                - Heat
+                - Boys/Womens
+                - Date
+                - '-'
+        sort3:
+            variable: sort
+            display: Sort Column 3
+            description: What to sort by first.
+            datatype: str
+            default_value: Place
+            no_text_field: true
+            options:
+                - Place
+                - Event
+                - Athlete
+                - Team
+                - Result
+                - Wind
+                - Heat
+                - Boys/Womens
+                - Meet
+                - Date
+                - '-'
+        sort4:
+            variable: sort
+            display: Sort Column 4
+            description: What to sort by first.
+            datatype: str
+            default_value: '-'
+            no_text_field: true
+            options:
+                - '-'
+                - Place
+                - Event
+                - Athlete
+                - Team
+                - Result
+                - Wind
+                - Heat
+                - Boys/Womens
+                - Meet
+                - Date
+        sort5:
+            variable: sort
+            display: Sort Column 5
+            description: What to sort by first.
+            datatype: str
+            default_value: '-'
+            no_text_field: true
+            options:
+                - '-'
+                - Place
+                - Event
+                - Athlete
+                - Team
+                - Result
+                - Wind
+                - Heat
+                - Boys/Womens
+                - Meet
+                - Date
+display:
+    Event:
+        event:
+            variable: event
+            display: Event
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by event.
+                checked: true
+                grouping_classes:
+                    - Example
+        place:
+            variable: place
+            display: Place
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by place.
+                checked: true
+                grouping_classes:
+                    - Example
+        athlete:
+            variable: athlete
+            display: Athlete
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by athlete.
+                checked: true
+                grouping_classes:
+                    - Example
+        team:
+            variable: team
+            display: Team
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by team.
+                checked: true
+                grouping_classes:
+                    - Example
+        result:
+            variable: result
+            display: Result
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by result.
+                checked: true
+                grouping_classes:
+                    - Example
+        wind:
+            variable: wind
+            display: Wind
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by wind.
+                checked: false
+                grouping_classes:
+                    - Example
+        heat:
+            variable: heat
+            display: Heat
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by heat.
+                checked: false
+                grouping_classes:
+                    - Example
+        class:
+            variable: class
+            display: Class
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by class.
+                checked: false
+                grouping_classes:
+                    - Example
+        gender:
+            variable: gender
+            display: "Boys/Girls"
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by gender.
+                checked: True
+                grouping_classes:
+                    - Example
+    Girls:
+        meet:
+            variable: meet
+            display: Meet
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by meet.
+                checked: true
+                grouping_classes:
+                    - Example
+        date:
+            variable: date
+            display: Date
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by date.
+                checked: true
+                grouping_classes:
+                    - Example
+

@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+    # db:
+    #     image: postgres:17
+    #     container_name: TrackTrackerDB
+    #     environment:
+    #         POSTGRES_USER: example
+    #         POSTGRES_PASSWORD: example
+    #         POSTGRES_DB: example_db
+    #     ports:
+    #         - "5432:5432"
+    #     volumes:
+    #         - postgres_data:/var/lib/postgresql/data
+
+    app:
+        container_name: CoachMacTraining
+        image: coach_mac_training:latest
+        # depends_on:
+        #     - db
+        environment:
+            # DATABASE_URL: postgresql://example:example@db:5432/example_db
+            LOGICAL_ENV: ${LOGICAL_ENV}
+            SERVICE_URL: ''
+            PYTHONUNBUFFERED: 1
+            # RUNNING_PORT: 8205
+        # command: bash entrypoint.sh
+        volumes:
+            - .:/app
+        ports:
+            - 8205:8000
+        # links:
+        #     - db
+        labels:
+            - "traefik.enable=true"
+
+            # - "traefik.http.routers.coach_mac_training_lan.rule=Host(`coach-mac-training.bragi.lan`)"
+            # - "traefik.http.routers.coach_mac_training_lan.entrypoints=web"
+            # # - "traefik.http.routers.emergencyinfo_lan.entrypoints=websecure"
+
+            - "traefik.http.routers.coach_mac_training.rule=Host(`coach-mac-training.nax.lol`)"
+            - "traefik.http.routers.coach_mac_training.entrypoints=websecure"
+            - "traefik.http.routers.coach_mac_training.tls.certresolver=myresolver"
+
+# volumes:
+#   postgres_data:

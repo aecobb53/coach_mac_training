@@ -1,0 +1,35 @@
+Primary Pages:
+    Main Website:
+        endpoint: home
+        description: Straight to the actual webpage.
+    Tech Stack:
+        endpoint: dev/tech-stack
+        description: Info about how the service is put together.
+    Development Roadmap:
+        endpoint: dev/roadmap
+        description: Upcoming work.
+    Service Health:
+        endpoint: dev/service-info
+        description: Service Info.
+
+# Extra Pages:
+#     Video:
+#         endpoint: video
+#         description: Links or descriptions to start or running video analysis.
+#     Request Data:
+#         endpoint: request-data
+#         description: Are there meets, results, or any other data im missing. Let me know and I will try to add it when I get a chance.
+#             You can also reach out if you want me to start tracking other data as well. I want to start tracking weather for each 
+#             result if I can but adding new datasets takes time. Don't hesitate to reach out though.
+#     About:
+#         endpoint: about
+#         description: About this service. Im also using this as a resume booster so check out my service info if you would like. 
+#     Roadmap:
+#         endpoint: roadmap
+#         description: Current things im tracking for implementation and the priority I place on them. I will try to keep this updated.
+#     Service Health:
+#         endpoint: healthcheck
+#         description: I may remove the tile but this is my healthcheck and status endpoints info
+#     Contact Me:
+#         endpoint: contact-me
+#         description: Generic reach out to me info.

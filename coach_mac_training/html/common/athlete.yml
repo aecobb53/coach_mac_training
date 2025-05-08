@@ -1,0 +1,212 @@
+filter:
+    Optional:
+        first_name:
+            variable: first_name
+            display: First Name
+            description: Filter by event.
+            datatype: string
+            default_value: null
+            grouping: Group1
+        last_name:
+            variable: last_name
+            display: Last Name
+            description: Filter by last_name.
+            datatype: string
+            default_value: null
+        team:
+            variable: team
+            display: Team
+            description: Filter by team.
+            datatype: string
+            default_value: Fairview
+    # Optional:
+        # meet:
+        #     variable: meet
+        #     display: Meet - Not implemented yet
+        #     description: Filter by meet.
+        #     datatype: string
+        #     default_value: null
+        gender:
+            variable: gender
+            display: Boys/Girls
+            description: Filter by gender.
+            datatype: string
+            default_value: null
+            no_text_field: true
+            options:
+                - "All"
+                - "Boys"
+                - "Girls"
+        event_class:
+            variable: event_class
+            display: Event Classification
+            description: Focus on event classifications.
+            datatype: string
+            default_value: All
+            no_text_field: true
+            options:
+                - "All"
+                - "Sprint"
+                - "Sprint,Fields"
+                - "Fields"
+                - "Distance"
+                - "Distance,Fields"
+                - "Sprint,Distance"
+        current:
+            variable: current
+            display: Current Student
+            description: Only grab current students.
+            datatype: string
+            default_value: Current
+            no_text_field: true
+            options:
+                - "Current"
+                - "All"
+        # event:
+        #     variable: event
+        #     display: Event - Not implemented yet
+        #     description: Filter by event.
+        #     datatype: string
+        #     default_value: null
+arrange:
+    Results:
+        limit:
+            variable: limit
+            display: Page Limit
+            description: Records per page.
+            datatype: str
+            default_value: null
+            no_text_field: true
+            options:
+                - '25'
+                - '50'
+                - '100'
+                - '1000'
+        # page_select:
+        #     variable: page_select
+        #     display: Page
+        #     description: Which page of results.
+        #     datatype: str
+        #     default_value: null
+    Sort:
+        sort1:
+            variable: sort
+            display: Sort Column 1
+            description: What to sort by first.
+            datatype: str
+            default_value: First Name
+            no_text_field: true
+            options:
+                - First Name
+                - Last Name
+                - Team
+                - Gender
+                - Class
+        sort2:
+            variable: sort
+            display: Sort Column 2
+            description: What to sort by first.
+            datatype: str
+            default_value: Last Name
+            no_text_field: true
+            options:
+                - Last Name
+                - First Name
+                - Team
+                - Gender
+                - Class
+                - '-'
+        sort3:
+            variable: sort
+            display: Sort Column 3
+            description: What to sort by first.
+            datatype: str
+            default_value: Team
+            no_text_field: true
+            options:
+                - Team
+                - First Name
+                - Last Name
+                - Gender
+                - Class
+                - '-'
+        sort4:
+            variable: sort
+            display: Sort Column 4
+            description: What to sort by first.
+            datatype: str
+            default_value: '-'
+            no_text_field: true
+            options:
+                - '-'
+                - First Name
+                - Last Name
+                - Team
+                - Gender
+                - Class
+        sort5:
+            variable: sort
+            display: Sort Column 5
+            description: What to sort by first.
+            datatype: str
+            default_value: '-'
+            no_text_field: true
+            options:
+                - '-'
+                - First Name
+                - Last Name
+                - Team
+                - Gender
+                - Class
+display:
+    Athlete:
+        last_name:
+            variable: last_name
+            display: Last Name
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by last_name.
+                checked: true
+                grouping_classes:
+                    - Example
+        first_name:
+            variable: first_name
+            display: First Name
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by first_name.
+                checked: true
+                grouping_classes:
+                    - Example
+        team:
+            variable: team
+            display: Team
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by team.
+                checked: true
+                grouping_classes:
+                    - Example
+        gender:
+            variable: gender
+            display: Gender
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by gender.
+                checked: true
+                grouping_classes:
+                    - Example
+        class:
+            variable: class
+            display: Class
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by class.
+                checked: true
+                grouping_classes:
+                    - Example

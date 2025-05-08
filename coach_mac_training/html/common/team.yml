@@ -1,0 +1,57 @@
+filter:
+    Optional:
+        team:
+            variable: team
+            display: Team
+            description: Filter by team.
+            datatype: string
+            default_value: 
+arrange:
+    Results:
+        limit:
+            variable: limit
+            display: Page Limit
+            description: Records per page.
+            datatype: str
+            default_value: null
+            no_text_field: true
+            options:
+                - '25'
+                - '50'
+                - '100'
+                - '1000'
+display:
+    Team:
+        team:
+            variable: team
+            display: Team
+            formatted_function: null
+            html_display_filtering:
+                display_column: Common
+                description: Filter by team.
+                checked: true
+                grouping_classes:
+                    - Example
+        # count:
+        #     variable: athlete-count
+        #     display: Athlete Count
+        #     formatted_function: null
+        #     html_display_filtering:
+        #         display_column: Common
+        #         description: Filter by athlete count.
+        #         checked: true
+        #         grouping_classes:
+        #             - Example
+# team_specific_display:
+#     Display Options:
+#         None:
+#             team:
+#             variable: team
+#             display: Team
+#             formatted_function: null
+#             html_display_filtering:
+#                 display_column: Common
+#                 description: Filter by team.
+#                 checked: true
+#                 grouping_classes:
+#                     - Example
