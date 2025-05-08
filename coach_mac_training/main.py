@@ -71,6 +71,11 @@ with open(os.path.join(os.path.dirname(os.getcwd()), 'info.json'), 'r') as jf:
 FAVICON_PATH = 'favicon.ico'
 ROBOTS_PATH = 'robots.txt'
 
+
+
+
+
+
 app = FastAPI(
     title=app_info['service_name'],
     description=app_info['description'],
