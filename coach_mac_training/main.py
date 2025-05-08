@@ -139,7 +139,7 @@ async def workouts(request: Request):
         page = await broken_page()
         return HTMLResponse(content=page, status_code=500)
 
-# Workouts
+# About
 @app.get('/about', status_code=200)
 async def about(request: Request):
     context = ContextSingleton()
