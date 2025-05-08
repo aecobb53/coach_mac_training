@@ -431,6 +431,7 @@ async def project_home_page():
     page_content = Div().add_class('home-page-content')
 
     page_content.add_element(Header(level=1, internal="Summer 2025 Track Training Plan"))
+    page_content.add_element(Header(level=1, internal="Summer 2025 Track Training Plan"))
     page_content.add_element(Paragraph(internal="""
 Coach Mac Training is a private coaching service dedicated to providing professional
 coaching and development to young athletes. I also provide training, rehabilitation, and
