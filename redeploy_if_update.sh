@@ -2,6 +2,10 @@
 
 LOGFILE="${LOGFILE_HOME}/redeploy_log_coach_mac_training.log"
 
+echo '' >> $LOGFILE
+echo '' >> $LOGFILE
+date >> $LOGFILE
+
 # Get current commit hash
 local_hash=$(git rev-parse HEAD)
 
