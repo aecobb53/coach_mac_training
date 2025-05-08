@@ -28,7 +28,7 @@ services:
         volumes:
             - .:/app
         ports:
-            - 8205:8000
+            - 8206:8000
         # links:
         #     - db
         labels:
