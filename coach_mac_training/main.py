@@ -149,6 +149,17 @@ async def about(request: Request):
         page = await broken_page()
         return HTMLResponse(content=page, status_code=500)
 
+# Info
+@app.get('/info', status_code=200)
+async def info(request: Request):
+    context = ContextSingleton()
+    try:
+        page = await unimplemented_page()
+        return HTMLResponse(content=page)
+    except Exception as e:
+        context.logger.warning(f"Error generating project page: {e}")
+        page = await broken_page()
+        return HTMLResponse(content=page, status_code=500)
 
 # # Root
 # @app.get('/ht', status_code=200)
