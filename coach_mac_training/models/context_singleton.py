@@ -14,3 +14,10 @@ class ContextSingleton:
             cls.config = config
             cls.init_time = datetime.utcnow()
         return cls._self
+
+    @property
+    def server_uptime(self):
+        """
+        Calculate server uptime
+        """
+        return datetime.utcnow() - self.init_time
