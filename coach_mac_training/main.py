@@ -21,10 +21,6 @@ from html import (
     # project_about,
     unimplemented_page,
     broken_page,
-    # filter_results_html_page,
-    # filter_athletes_html_page, find_athletes_html_page,
-    # filter_teams_html_page, find_team_html_page,
-    # filter_records_html_page,
     workouts_page,
     info_page,
 )
