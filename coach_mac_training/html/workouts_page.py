@@ -56,8 +56,8 @@ from .env import (
     TEXT_COLOR_TWO,
 )
 
-with open('../etc/workout_plan.json', 'r') as jf:
-    workout_plan = json.load(jf)
+# with open('../etc/workout_plan.json', 'r') as jf:
+#     workout_plan = json.load(jf)
 
 WORKOUT_PAGE_STYLES = [
     # StyleTag(name='.page-content', internal=f"""
@@ -88,34 +88,47 @@ WORKOUT_PAGE_STYLES = [
     StyleTag(name='.week-table', internal=f"""
         padding: 2px;
         margin: 2px;
+        width: 100%;
     """),
 
     StyleTag(name='.table-data', internal=f"""
+        padding: 2px 10px;
         margin: 2px;
         // border: 2px solid black;
     """),
     StyleTag(name='.table-data-date', internal=f"""
-        padding: 2px 10px;
+        width: 86px;
+    """),
+    StyleTag(name='.table-data-time', internal=f"""
+        width: 124px;
     """),
     StyleTag(name='.table-data-focus', internal=f"""
-        padding: 2px 10px;
+        width: 117px;
     """),
     StyleTag(name='.table-data-detail', internal=f"""
-        padding: 2px 50px;
+        text-align: left;
     """),
 ]
 
-def create_table_object(columns):
+def create_table_object():
     week_table = Table().add_class('week-table')
     header_row = TableRow().add_class('odd-row')
-    for column_name, column_options in columns.items():
-        header_item = TableHeader(internal=column_name)
-        header_row.add_element(header_item)
+    header_item = TableHeader(internal='Date').add_class('table-data').add_class('table-data-date')
+    header_row.add_element(header_item)
+    header_item = TableHeader(internal='Time').add_class('table-data').add_class('table-data-time')
+    header_row.add_element(header_item)
+    header_item = TableHeader(internal='Focus').add_class('table-data').add_class('table-data-focus')
+    header_row.add_element(header_item)
+    header_item = TableHeader(internal='Detail').add_class('table-data').add_class('table-data-detail')
+    header_row.add_element(header_item)
     week_table.add_element(header_row)
     return week_table
 
 
 async def workouts_page(onload_function=None):
+    with open('../etc/workout_plan.json', 'r') as jf:
+        workout_plan = json.load(jf)
+
     base_doc = await project_base_page()
 
     page_content = Div().add_class('page-content')
@@ -136,30 +149,26 @@ Every practice will start with team warmups. This is to get your body ready for 
 """))
     page_content.add_element(workout_expectations)
 
-    week_table_columns = {
-        'Date': {},
-        'Focus': {},
-        'Detail': {},
-    }
-
-
     for week_index, week in enumerate(workout_plan):
         week_tile = Div().add_class('week-tile')
         week_tile.add_element(Header(level=3, internal=week['tile_header']).add_class('week-header'))
         if week.get('tile_info_1'):
             week_tile.add_element(Paragraph(internal=week['tile_info_1']).add_class('week-info-1'))
-        week_table = create_table_object(week_table_columns)
+        week_table = create_table_object()
         for day_index, day in enumerate(week['day_data']):
             if day_index % 2 == 1:
                 data_row = TableRow().add_class('odd-row')
             if day_index % 2 == 0:
                 data_row = TableRow().add_class('even-row')
-            data_data = TableData(internal=day['date']).add_class('table-data').add_class('table-data-date')
-            data_row.add_element(data_data)
-            data_data = TableData(internal=day['plan']).add_class('table-data').add_class('table-data-focus')
-            data_row.add_element(data_data)
-            data_data = TableData(internal=day['detail']).add_class('table-data').add_class('table-data-detail')
-            data_row.add_element(data_data)
+            data_item = TableData(internal=day['date']).add_class('table-data').add_class('table-data-date')
+            data_row.add_element(data_item)
+            time = f"{day['start_time']} - {day['finish_time']}"
+            data_item = TableData(internal=time).add_class('table-data').add_class('table-data-time')
+            data_row.add_element(data_item)
+            data_item = TableData(internal=day['plan']).add_class('table-data').add_class('table-data-focus')
+            data_row.add_element(data_item)
+            data_item = TableData(internal=day['detail']).add_class('table-data').add_class('table-data-detail')
+            data_row.add_element(data_item)
             week_table.add_element(data_row)
         week_tile.add_element(week_table)
         if week.get('tile_info_2'):

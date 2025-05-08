@@ -127,19 +127,19 @@ FILTER_STYLES = [
 ]
 TABLE_STYLES = [
         StyleTag(name='table', internal=f"""
-            width: 100%;
+            // width: 100%;
             height: 100%;
             border: 5px solid black;
             text-align: center;
         """),
         StyleTag(name='thead', internal=f"""
-            width: 100%;
+            // width: 100%;
             fontWeight: bold;
             padding: 5px;
             color: {TEXT_COLOR_ONE};
         """),
         StyleTag(name='tbody', internal=f"""
-            width: 100%;
+            // width: 100%;
             height: 100%;
             border: 5px solid black;
             color: {TEXT_COLOR_ONE};

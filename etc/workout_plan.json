@@ -7,22 +7,16 @@
             {
                 "date": "Thu Jun 12",
                 "plan": "Intro day",
-                "detail": "Set the tone"
+                "detail": "Set the tone, warmups, drills, etc.",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jun 13",
                 "plan": "Long Run",
-                "detail": "20 mins"
-            },
-            {
-                "date": "Sat Jun 14",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jun 15",
-                "plan": "Off",
-                "detail": ""
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -33,38 +27,38 @@
         "day_data": [
             {
                 "date": "Mon Jun 16",
-                "plan": "Run/drills",
-                "detail": "20 mins"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jun 17",
-                "plan": "Workout/speed",
-                "detail": "Pyramid- 120"
+                "plan": "Workout / speed",
+                "detail": "Pyramid - 120, 100, 80, 100, 120",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jun 18",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jun 19",
-                "plan": "Workout/speed",
-                "detail": "10"
+                "plan": "Workout / speed",
+                "detail": "10, 20, 30, 40, 50, 60, 70, 80, 90, 100 <i>all out</i>",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jun 20",
-                "plan": "Run/drills/form",
-                "detail": "20 minutes"
-            },
-            {
-                "date": "Sat Jun 21",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jun 22",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -75,38 +69,38 @@
         "day_data": [
             {
                 "date": "Mon Jun 23",
-                "plan": "Run/drills",
-                "detail": ""
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jun 24",
-                "plan": "Workout/speed",
-                "detail": "Pyramid- 120"
+                "plan": "Workout / speed",
+                "detail": "Pyramid - 120, 100, 80, 100, 120",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jun 25",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jun 26",
-                "plan": "Workout/speed",
-                "detail": "6x50"
+                "plan": "Workout / speed",
+                "detail": "6x50, 2x150, 2x120, 2x 90 - <i>2min rest 90% effort<i>",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jun 27",
-                "plan": "Run/drills",
-                "detail": "20 min recovery run"
-            },
-            {
-                "date": "Sat Jun 28",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jun 29",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "20 min recovery run, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -117,38 +111,38 @@
         "day_data": [
             {
                 "date": "Mon Jun 30",
-                "plan": "Run/drills",
-                "detail": "20 min"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jul 01",
-                "plan": "Workout/speed",
-                "detail": "Pyramid- 2x150"
+                "plan": "Workout / speed",
+                "detail": "Pyramid - 2x150, 2x120, 2x100 - <i>3 minute rest, get after it<i>",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jul 02",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jul 03",
-                "plan": "Workout/speed",
-                "detail": "8 flying 30's w/30 meter accel zone"
+                "plan": "Workout / speed",
+                "detail": "8 flying 30's w/ 30 meter accel zone",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jul 04",
-                "plan": "Run/drills",
-                "detail": "20 minute recovery run"
-            },
-            {
-                "date": "Sat Jul 05",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jul 06",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "20 minute recovery run, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -159,38 +153,38 @@
         "day_data": [
             {
                 "date": "Mon Jul 07",
-                "plan": "Run/drills",
-                "detail": "20 minute run"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jul 08",
-                "plan": "Workout/speed",
-                "detail": "5x10 20 30's"
+                "plan": "Workout / speed",
+                "detail": "5x10 20 30's, 2x20, 2x30 - <i>out of blocks<i>",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jul 09",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jul 10",
-                "plan": "Workout/speed",
-                "detail": "100 yard fly's w/o shoes on turf x6 at 60-70% effort"
+                "plan": "Workout / speed",
+                "detail": "100 yard fly's w/o shoes on turf x6 - <i>60-70% effort</i>",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jul 11",
-                "plan": "Run/drills",
-                "detail": "20 minute run"
-            },
-            {
-                "date": "Sat Jul 12",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jul 13",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "20 minute run, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -201,38 +195,38 @@
         "day_data": [
             {
                 "date": "Mon Jul 14",
-                "plan": "Run/drills",
-                "detail": "20 minute run"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jul 15",
-                "plan": "Workout/speed",
-                "detail": "Pyramid- 120"
+                "plan": "Workout / speed",
+                "detail": "Pyramid - 120,100,80,100,120",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jul 16",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jul 17",
-                "plan": "Workout/speed",
-                "detail": "Broken 300's- 2x150 90% effort"
+                "plan": "Workout / speed",
+                "detail": "Broken 300's - 2x150 90% effort, 90 sec rest btw reps, 6 minute rest btw sets - 2 sets",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jul 18",
-                "plan": "Run/drills",
-                "detail": "drills"
-            },
-            {
-                "date": "Sat Jul 19",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jul 20",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "drills",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             }
         ]
     },
@@ -243,38 +237,38 @@
         "day_data": [
             {
                 "date": "Mon Jul 21",
-                "plan": "Run/drills",
-                "detail": "20 minute run"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jul 22",
-                "plan": "Workout/speed",
-                "detail": "Alactic- 3x3 80's at 80-90% effort"
+                "plan": "Workout / speed",
+                "detail": "Alactic - 3x3 80's at 80-90% effort, 2 min rest btw reps 6 min rest btw sets",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jul 23",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jul 24",
-                "plan": "Workout/speed",
-                "detail": "Acceleration- 5x10's"
+                "plan": "Workout / speed",
+                "detail": "Acceleration - 5x10's, 5x20's",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Jul 25",
-                "plan": "Run/drills",
-                "detail": "20 min recovery run"
-            },
-            {
-                "date": "Sat Jul 26",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Jul 27",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "20 min recovery run, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             }
         ]
     },
@@ -285,38 +279,38 @@
         "day_data": [
             {
                 "date": "Mon Jul 28",
-                "plan": "Run/drills",
-                "detail": "Time Trial Day- Choose 1 or multiple events. Lets see what you got so far."
+                "plan": "Run / Drills",
+                "detail": "<b>Time Trial Day</b> - Choose 1 or multiple events. Lets see what you got so far.",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Jul 29",
-                "plan": "Workout/speed",
-                "detail": "Drills/Stretch"
+                "plan": "Workout / speed",
+                "detail": "Drills/Stretch",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Jul 30",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Jul 31",
-                "plan": "Workout/speed",
-                "detail": "100 yard fly's w/o shoes on turf x6 at 60-70% effort"
+                "plan": "Workout / speed",
+                "detail": "100 yard fly's w/o shoes on turf x6 at 60-70% effort",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Aug 01",
-                "plan": "Run/drills",
-                "detail": "Drills/ stretch"
-            },
-            {
-                "date": "Sat Aug 02",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Aug 03",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "Drills/ stretch, drills",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             }
         ]
     },
@@ -327,38 +321,38 @@
         "day_data": [
             {
                 "date": "Mon Aug 04",
-                "plan": "Run/drills",
-                "detail": "20 minute run"
+                "plan": "Run / Drills",
+                "detail": "20 minutes, drills",
+                "start_time": "7:30am",
+                "finish_time": "8:15am"
             },
             {
                 "date": "Tue Aug 05",
-                "plan": "Workout/speed",
-                "detail": "3x500's each rep faster than the last"
+                "plan": "Workout / speed",
+                "detail": "3x500's each rep faster than the last, 5 minute rest btw reps",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Wed Aug 06",
                 "plan": "Off",
-                "detail": ""
+                "detail": "",
+                "start_time": "",
+                "finish_time": ""
             },
             {
                 "date": "Thu Aug 07",
-                "plan": "Workout/speed",
-                "detail": "Drills/stretch"
+                "plan": "Workout / speed",
+                "detail": "Drills/stretch",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             },
             {
                 "date": "Fri Aug 08",
-                "plan": "Run/drills",
-                "detail": "Game Day/ Finale"
-            },
-            {
-                "date": "Sat Aug 09",
-                "plan": "Off",
-                "detail": ""
-            },
-            {
-                "date": "Sun Aug 10",
-                "plan": "Off",
-                "detail": ""
+                "plan": "Run / drills",
+                "detail": "Game Day / Finale, drills",
+                "start_time": "7:30am",
+                "finish_time": "9am"
             }
         ]
     }
