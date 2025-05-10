@@ -123,11 +123,11 @@ async def workouts_page(onload_function=None):
 We are here to take the foundations of the season and improve so we can try to make state this next season. We want to focus on the following:
     """))
 
-    workout_expectations.add_element(Paragraph(internal='BUY IN - We want to you buy all the way in. We are here for you to improve but it has to start with you and a hunger.'))
-    workout_expectations.add_element(Paragraph(internal='HONE YOUR BODY - We want to improve your speed, strength, and power endurance.'))
-    workout_expectations.add_element(Paragraph(internal='BUILD A TEAM - We want to have team comradery and foster team spirit.'))
-    workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
-    workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
+    # workout_expectations.add_element(Paragraph(internal='BUY IN - We want to you buy all the way in. We are here for you to improve but it has to start with you and a hunger.'))
+    # workout_expectations.add_element(Paragraph(internal='HONE YOUR BODY - We want to improve your speed, strength, and power endurance.'))
+    # workout_expectations.add_element(Paragraph(internal='BUILD A TEAM - We want to have team comradery and foster team spirit.'))
+    # workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
+    # workout_expectations.add_element(Paragraph(internal='EXAMPLE - example'))
     workout_expectations.add_element(Paragraph(internal="""
 Every practice will start with team warmups. This is to get your body ready for the day. The workouts will vary for different athletes. At the end of the workout all athletes will come back together for team stretching. This is important for building a cohesive team.
 """))

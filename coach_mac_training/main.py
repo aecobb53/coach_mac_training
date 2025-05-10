@@ -133,8 +133,6 @@ async def robots():
 
 # Emblem
 @app.get('/static/emblem.ico', include_in_schema=False)
+@app.get('/emblem.ico', include_in_schema=False)
 async def emblem():
-    print(f"GRABBING emblem")
-    print(f"CHECKING PATH: {FAVICON_PATH}")
-    print(os.listdir('..'))
     return FileResponse(FAVICON_PATH)

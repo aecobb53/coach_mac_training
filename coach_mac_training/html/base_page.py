@@ -477,7 +477,6 @@ passion in coaching and our strive to make a difference.
     base_doc.body_content = body_content
 
     phtml_doc = base_doc.return_phtml
-    print(os.listdir())
     phtml_doc.add_favicon('favicon.ico')
 
     return phtml_doc.return_document
