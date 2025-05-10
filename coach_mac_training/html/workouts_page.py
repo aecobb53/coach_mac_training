@@ -18,14 +18,6 @@ from .base_page import (
     )
 
 from .env import (
-    SEASON_YEAR,
-#     COLOR_ONE,
-#     COLOR_TWO,
-#     COLOR_THREE,
-#     COLOR_FOUR,
-#     COLOR_FIVE,
-)
-from .env import (
     BACKGROUND_COLOR,
     WHITE_COLOR,
     BLACK_COLOR,
@@ -122,6 +114,8 @@ async def workouts_page(onload_function=None):
     base_doc = await project_base_page()
 
     page_content = Div().add_class('page-content')
+
+    # TODO: These paragraphs need to be indented and formatted
 
     workout_expectations = Div().add_class('workout-expectations')
     workout_expectations.add_element(Header(level=2, internal='Summer Focus'))

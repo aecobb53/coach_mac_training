@@ -14,14 +14,6 @@ from .common import HOME_PAGE_LINK_CONTENT, DEV_HOME_PAGE_LINK_CONTENT
 #     ROW_BACKGROUND_COLOR_2,
 # )
 from .env import (
-    SEASON_YEAR,
-#     COLOR_ONE,
-#     COLOR_TWO,
-#     COLOR_THREE,
-#     COLOR_FOUR,
-#     COLOR_FIVE,
-)
-from .env import (
     BACKGROUND_COLOR,
     WHITE_COLOR,
     BLACK_COLOR,
@@ -402,8 +394,17 @@ efc9ff
 
 async def project_base_page(onload_function=None):
     # Navigation
+    # page_image = Image().add_style({'display': 'inline'})
+    # page_image.add_src('static/emblem.ico')
+    # page_name = Header(level=2, internal='Coach Mac Training').add_style({'display': 'inline'})
+    # webpage_name = Span(internal=[
+    #     page_image,
+    #     page_name,
+    #     ])
+    webpage_name = Div(internal=[
+        'Coach Mac Training',])
     navigation_content = NavigationContent(
-        webpage_name="Coach Mac Training",
+        webpage_name=webpage_name,
         webpage_name_link='/',
         background_color=NAVIGATION_BACKGROUND_COLOR,
         text_color=TEXT_COLOR_TWO,
@@ -430,6 +431,13 @@ async def project_home_page():
     # Body
     page_content = Div().add_class('home-page-content')
 
+    body_image = Image()
+    body_image.add_src('/static/emblem.ico')
+    page_content.add_element(body_image)
+
+    # TODO: These paragraphs need to be indented and formatted
+    # TODO: Change the header names and level
+
     page_content.add_element(Header(level=1, internal="Summer 2025 Track and Field Training Plan"))
     page_content.add_element(Paragraph(internal="""
 Coach Mac Training is a private coaching service dedicated to providing professional
@@ -452,23 +460,12 @@ working to develop, improve, and introduce mental toughness and life skills to u
 live productive and healthy lives.
     """))
 
-    page_content.add_element(Header(level=1, internal="Mission"))
+    page_content.add_element(Header(level=1, internal="Vision"))
     page_content.add_element(Paragraph(internal="""
 We strive to connect and build athletes up through dynamic coaching and training. We are
 always improving new techniques and training practice with the ultimate goal of helping
 athletes be the best version of themselves in their athletic endeavors. We are driven by our
 passion in coaching and our strive to make a difference.
-    """))
-
-    page_content.add_element(Header(level=1, internal="Current Offerings"))
-    page_content.add_element(Paragraph(internal="""
-Private and specialized training for athletes in untimed sessions. The sessions are specific
-for each athlete. The time can range from one to two hours or more depending on the
-athlete’s need.
-Current pricing is $100 per session. I will offer weekly and monthly packages for athletes
-and their families.
-The session frequency will depend on the athlete and their training preferences. The
-average number of sessions is two to three per week.
     """))
 
     body_content = BodyContent(
@@ -479,7 +476,11 @@ average number of sessions is two to three per week.
 
     base_doc.body_content = body_content
 
-    return base_doc.return_document
+    phtml_doc = base_doc.return_phtml
+    print(os.listdir())
+    phtml_doc.add_favicon('favicon.ico')
+
+    return phtml_doc.return_document
 
 async def broken_page():
     base_doc = await project_base_page()

@@ -35,7 +35,7 @@ from html import project_base_page
 # Service Info
 with open(os.path.join(os.path.dirname(os.getcwd()), 'info.json'), 'r') as jf:
     app_info = json.load(jf)
-FAVICON_PATH = 'favicon.ico'
+FAVICON_PATH = '../Coach-Mac-Training-Emblem.ico'
 ROBOTS_PATH = 'robots.txt'
 
 
@@ -69,6 +69,7 @@ async def startup_event():
 @app.get('/home', status_code=200)
 async def root(request: Request):
     context = ContextSingleton()
+    page = await project_home_page()
     try:
         page = await project_home_page()
         return HTMLResponse(content=page)
@@ -92,6 +93,7 @@ async def workouts(request: Request):
 # About
 @app.get('/about', status_code=200)
 async def about(request: Request):
+    # TODO: Add an actual About
     context = ContextSingleton()
     try:
         page = await unimplemented_page()
@@ -126,5 +128,13 @@ async def favicon():
 # Robots
 @app.get('/static/robots.txt', include_in_schema=False)
 @app.get('/robots.txt', include_in_schema=False)
-async def favicon():
+async def robots():
     return FileResponse(ROBOTS_PATH)
+
+# Emblem
+@app.get('/static/emblem.ico', include_in_schema=False)
+async def emblem():
+    print(f"GRABBING emblem")
+    print(f"CHECKING PATH: {FAVICON_PATH}")
+    print(os.listdir('..'))
+    return FileResponse(FAVICON_PATH)

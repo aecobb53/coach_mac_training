@@ -1,7 +1,6 @@
 import yaml
 import json
 import os
-from .env import SEASON_YEAR
 
 
 path = os.path.join(os.getcwd(), 'html', 'common')
@@ -45,19 +44,3 @@ DEV_ROADMAP = dev_roadmap
 
 def display_date(date):
     return date.strftime('%m/%d/%y')
-
-def class_formatter(graduation_year, allow_none=True):
-    if allow_none and graduation_year is None:
-        return 'Unknown', 'Un'
-    if graduation_year - SEASON_YEAR == 0:
-        return 'Senior', 'Sr'
-    elif graduation_year - SEASON_YEAR == 1:
-        return 'Junior', 'Jr'
-    elif graduation_year - SEASON_YEAR == 2:
-        return 'Sophomore', 'So'
-    elif graduation_year - SEASON_YEAR == 3:
-        return 'Freshman', 'Fr'
-    elif graduation_year - SEASON_YEAR < 0:
-        return 'Graduated', 'Gr'
-    elif graduation_year - SEASON_YEAR > 3:
-        return 'Underclass', 'Uc'

@@ -1,4 +1,4 @@
-from .base_page import SEASON_YEAR, project_base_page, project_home_page, project_about, project_dev_home_page, broken_page
+from .base_page import project_base_page, project_home_page, project_about, project_dev_home_page, broken_page
 from .unimplemented_page import unimplemented_page, unimplemented_dev_page
 from .workouts_page import workouts_page
 from .info_page import info_page
